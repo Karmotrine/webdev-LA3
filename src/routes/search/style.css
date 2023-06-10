@@ -1,0 +1,15 @@
+:root{
+    --main-color: blue;
+    --border-line: 1px solid black;
+}
+body{
+    padding: 2vh;
+    background-color: lightgray;
+}
+*{
+    /* outline: 1px red solid; */
+}
+
+#profile{
+    outline: 1px black solid;
+}
