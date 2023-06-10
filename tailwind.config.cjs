@@ -6,7 +6,23 @@ const config = {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        '#D24646': '#D24646',
+      },
+      borderRadius: {
+        'full': '9999px',
+      },
+      fontWeight: {
+        semibold: '600',
+      },
+      width: {
+        '183': '183px',
+      },
+      height: {
+        '128': '32rem',
+      }
+    },
   },
 
   plugins: [

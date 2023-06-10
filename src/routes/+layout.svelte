@@ -1,21 +1,19 @@
 <script>
   import "../app.postcss";
-  import Header from "./Header.svelte";
+  // import Header from "./Header.svelte";
+  import Navbar from "./navbar/Navbar.svelte";
+  import Footer from "./footer/Footer.svelte"
   import "./styles.css";
 </script>
 
 <div class="app">
-  <Header />
+  <Navbar />
 
   <main>
-    <slot />
+    Main content here
   </main>
 
-  <footer>
-    <p>
-      visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit
-    </p>
-  </footer>
+  <Footer />
 </div>
 
 <style>
