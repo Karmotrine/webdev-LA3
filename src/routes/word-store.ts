@@ -1,4 +1,6 @@
 /** The list of possible words */
+import type { SearchModel } from "./search/model";
+
 export const words = [
 	'aback',
 	'abase',
@@ -12978,3 +12980,15 @@ export const allowed = new Set([
 	'zymes',
 	'zymic'
 ]);
+export const MockData: Array<SearchModel> = []
+words.forEach((word, index) => {
+	let search: SearchModel = {
+		author: "author",
+		date: "June 20, 2023",
+		thumbnail:`src/lib/images/svelte-welcome.png`,
+		artistThumb: "src/lib/images/svelte-welcome.png",
+		title: word,
+	}
+	MockData.push(search)
+}
+)

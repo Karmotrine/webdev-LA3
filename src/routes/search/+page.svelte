@@ -1,6 +1,9 @@
 <script lang="ts">
-    import {words} from './store';
-    import Search from './Search.svelte';
+    import type { SearchModel } from './model';
+
+    import { searchTerm, searched } from '../stores';
+    import Search from './Result.svelte';
+    //if from backend use async-set
 </script>
 
 <svelte:head>
@@ -9,31 +12,19 @@
 </svelte:head>
 
 <div id="result">
+    <span><a href="/">Return {$searchTerm}</a></span>
     <span id="tag">Results</span>
-    {#each words as word}
-        <Search search={
-            {
-                author: "author",
-                date: "June 20, 2023",
-                thumbnail:`src/lib/images/svelte-welcome.png`,
-                artistThumb: "src/lib/images/svelte-welcome.png",
-                title: word,
-                description: "ASdasdadsASdasdadsASdas"
-            }
-        }/>
-    {/each}
-    <!-- {#each {length: 4} as _, i}
-        <Search search={
-            {
-                author: "Composer",
-                date: "June 20, 2023",
-                thumbnail:`src/lib/images/svelte-welcome.png`,
-                artistThumb: "src/lib/images/svelte-welcome.png",
-                title: "asdads",
-                description: "ASdasdadsASdasdadsASdas"
-            }
-        }/>
-    {/each} -->
+    {#if $searched !== undefined}
+        {#if $searched.length === 0 && $searchTerm}
+            <p>No Results</p>
+        {:else}
+            {#each $searched as searchItem}
+                <Search search={searchItem}/>
+            {/each}
+        {/if}
+    {:else}     
+        <p>Loading</p>
+    {/if}
 </div>
 <style>
 #result{

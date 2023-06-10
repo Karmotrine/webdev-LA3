@@ -4,5 +4,5 @@ export type SearchModel = {
     thumbnail: string;
     artistThumb: string;
     title: string;
-    description: string;
+    // description: string;
 }

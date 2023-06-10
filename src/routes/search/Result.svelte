@@ -19,7 +19,7 @@
                 </div>
                 <span class="name">{search.author}</span>
             </div>
-            <div class="desc">{search.description}</div>
+            <!-- <div class="desc">{search.description}</div> -->
         </div>
     </div>
 </div>

@@ -1,3 +1,3 @@
 <div>
-	<a href="/search">Search</a>
+	<slot/>
 </div>
