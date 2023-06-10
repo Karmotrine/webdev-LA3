@@ -8,13 +8,14 @@ const config = {
   theme: {
     extend: {
       colors: {
-        '#D24646': '#D24646',
+        '#9DC08B': '#9DC08B',
+        '#E5EEDF': '#E5EEDF',
       },
       borderRadius: {
         'full': '9999px',
       },
       fontWeight: {
-        semibold: '600',
+        'extra-bold': '800',
       },
       width: {
         '183': '183px',
