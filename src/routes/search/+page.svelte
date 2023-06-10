@@ -1,9 +1,8 @@
 <script lang="ts">
     import type { SearchModel } from './model';
-
-    import { searchTerm, searched } from '../stores';
+    import { searchTerm, searched, searchData } from '../stores';
     import Search from './Result.svelte';
-    //if from backend use async-set
+
 </script>
 
 <svelte:head>
@@ -12,22 +11,25 @@
 </svelte:head>
 
 <div id="result">
-    <span><a href="/">Return {$searchTerm}</a></span>
     <span id="tag">Results</span>
     {#if $searched !== undefined}
         {#if $searched.length === 0 && $searchTerm}
-            <p>No Results</p>
+            <p id="none">No Results</p>
         {:else}
             {#each $searched as searchItem}
                 <Search search={searchItem}/>
             {/each}
         {/if}
     {:else}     
-        <p>Loading</p>
+        <p id="Loading">Loading</p>
     {/if}
 </div>
 <style>
 #result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
 }
 #tag{
@@ -35,5 +37,17 @@
     width: 100%;
     border-bottom: var(--border-line);
     margin-top: 2vh;
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+#none{
+    text-align: center;
+    font-size: 10em;
+    transform: all 100ms ease 20ms;
+}
+@media screen and (max-width: 720px){
+    #none{
+        font-size: 10vw;
+    }
 }
 </style>

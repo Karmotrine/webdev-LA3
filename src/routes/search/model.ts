@@ -2,7 +2,7 @@ export type SearchModel = {
     author: string;
     date: string | Date;
     thumbnail: string;
-    artistThumb: string;
+    profile: string;
     title: string;
-    // description: string;
+    url: string;
 }

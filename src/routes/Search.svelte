@@ -11,7 +11,7 @@
 		timer = setTimeout(() => {
 			$searchTerm = value.value;
             console.log($searched)
-        }, 750);
+        }, 250);
 	}
 
     const enterPress = (event:KeyboardEvent) => {
