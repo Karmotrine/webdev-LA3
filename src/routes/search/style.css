@@ -2,10 +2,3 @@
     --main-color: blue;
     --border-line: 1px solid black;
 }
-body{
-    padding: 5vh clamp(1vw, 20px, 10vh);
-    background-color: lightgray;
-}
-*{
-    /* outline: 1px red solid; */
-}
