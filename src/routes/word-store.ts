@@ -12986,7 +12986,7 @@ words.forEach((word, index) => {
 		author: "author",
 		date: "June 20, 2023",
 		thumbnail:`src/lib/images/svelte-welcome.png`,
-		artistThumb: "src/lib/images/svelte-welcome.png",
+		profile: "src/lib/images/svelte-welcome.png",
 		title: word,
 	}
 	MockData.push(search)

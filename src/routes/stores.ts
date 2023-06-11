@@ -1,7 +1,7 @@
 import { writable, derived } from "svelte/store";
 import { MockData } from "./word-store";
 import { MusicData } from "./data-server";
-import type { SearchModel } from "./search/model";
+import type { SearchModel, SearchPayLoad } from "./search/model";
 import type { Writable } from "svelte/store";
 
 export const searchTerm = writable("")
@@ -17,4 +17,4 @@ export const searched = derived(
         return []
     }
 ) 
-export const urlLoad: Writable<string> = writable("")
+export const urlLoad: Writable<SearchPayLoad> = writable()

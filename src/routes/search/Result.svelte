@@ -5,7 +5,12 @@
 	export let search: SearchModel;
 
     const payLoad = () => {
-        urlLoad.set(search.url)
+        urlLoad.set(
+			{
+				url: search.url,
+				title: search.title
+			}
+		)
         goto('/')
     }
 </script>
@@ -50,8 +55,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		min-width: 45%;
-		max-width: 540px;
+		max-width: 32.5%;
+		min-width: 32.5%;
+		width: 32.5%;
+		
+		/* max-width: 540px; */
 		aspect-ratio: 16/9;
 		overflow: hidden;
 		margin-right: 2%;
@@ -76,6 +84,9 @@
 		height: 40%;
 		padding-bottom: 15%;
 		width: inherit;
+	}
+	.music .name{
+		display: none;
 	}
 	.music .title {
 		width: 80%;
@@ -115,7 +126,8 @@
 
 	@media screen and (max-width: 600px) {
 		.thumbnail {
-			min-width: 90vw;
+			min-width: 100%;
+			margin-right: 0;
 		}
 		.artist {
 			padding: 10% 0;
@@ -135,6 +147,9 @@
 		.music {
         	padding-bottom: 0;
 		}
+		.music .name{
+			display: inline-block;
+		}
         .music .title{
             width: 100%;
         }
@@ -152,39 +167,5 @@
         .details .name{
             display: none;
         }
-		/* .music{
-        font-size: 12px;
-        background-color: rgb(52, 52, 52);
-        color: white;
-        position: absolute;
-        padding: 2% 10%;
-        border-radius: 0 50px 50px 0;
-        height: max-content;
-        bottom: 1px;
-    }
-    .artist{
-        padding: 0;
-    }
-    .thumbnail img{
-        position: relative;
-    }
-    .thumbnail{
-        min-width: 100%;
-        margin-right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .profile{
-        position: absolute;
-        display: none;
-        mix-blend-mode: normal;
-        z-index: 25;
-        width: 18.5vw;
-        aspect-ratio: 1/1;
-    }
-    .name{
-        display: none;
-    } */
 	}
 </style>

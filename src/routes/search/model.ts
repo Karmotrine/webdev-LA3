@@ -6,3 +6,8 @@ export type SearchModel = {
     title: string;
     url: string;
 }
+
+export type SearchPayLoad = {
+    url: string,
+    title: string
+}
