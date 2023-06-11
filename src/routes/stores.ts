@@ -10,7 +10,9 @@ export const searched = derived(
 	[searchTerm, searchData],
 	([$searchTerm, $searchData]) => {
 		if($searchTerm){
-            let data = $searchData.filter(data => data.title.toLowerCase().includes($searchTerm.toLowerCase()))
+            let data = $searchData.filter(data => 
+                data.title.toLowerCase().includes($searchTerm.toLowerCase()) || 
+                data.author.toLowerCase().includes($searchTerm.toLowerCase()))
             if(data.length) return data
         }
         if(!$searchData.length) return undefined
