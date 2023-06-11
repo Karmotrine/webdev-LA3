@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { searchTerm, searched } from './stores';
+    import { searchTerm} from './stores';
     import { page } from '$app/stores';
     import { goto } from '$app/navigation';
 
@@ -10,14 +10,12 @@
 		clearTimeout(timer);
 		timer = setTimeout(() => {
 			$searchTerm = value.value;
-            console.log($searched)
         }, 250);
 	}
 
     const enterPress = (event:KeyboardEvent) => {
         if(event.key === "Enter"){
             $searchTerm = (event.currentTarget as HTMLInputElement).value
-            console.log($searched)
             goto('/search')
         }
     }

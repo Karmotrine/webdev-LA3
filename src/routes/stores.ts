@@ -17,3 +17,4 @@ export const searched = derived(
         return []
     }
 ) 
+export const urlLoad: Writable<string> = writable("")

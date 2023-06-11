@@ -1,8 +1,6 @@
 <script lang="ts">
-    import type { SearchModel } from './model';
-    import { searchTerm, searched, searchData } from '../stores';
+    import { searchTerm, searched} from '../stores';
     import Search from './Result.svelte';
-
 </script>
 
 <svelte:head>
@@ -41,6 +39,7 @@
     font-weight: bolder;
 }
 #none{
+    justify-content: center;
     text-align: center;
     font-size: 10em;
     transform: all 100ms ease 20ms;
