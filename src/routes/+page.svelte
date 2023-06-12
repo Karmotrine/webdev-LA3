@@ -199,11 +199,11 @@
   }
 
   .next {
-    right: -25px;
+    right: -15px;
   }
 
   .previous {
-    left: -25px;
+    left: -15px;
   }
 </style>
 
