@@ -20,7 +20,7 @@
         nextSong
       ];
     } else {
-      showNextPopularSong(); // Call the function recursively to find a non-repeated song
+      showNextPopularSong();
     }
   }
 
@@ -33,7 +33,7 @@
         ...limitedMusicData.slice(0, limitedMusicData.length - 1)
       ];
     } else {
-      showPreviousPopularSong(); // Call the function recursively to find a non-repeated song
+      showPreviousPopularSong();
     }
   }
 
@@ -46,7 +46,7 @@
         nextSong
       ];
     } else {
-      showNextLatestSong(); // Call the function recursively to find a non-repeated song
+      showNextLatestSong();
     }
   }
 
@@ -59,26 +59,26 @@
         ...limitedLMusicData.slice(0, limitedLMusicData.length - 1)
       ];
     } else {
-      showPreviousLatestSong(); // Call the function recursively to find a non-repeated song
+      showPreviousLatestSong();
     }
   }
 
-  // Function to shuffle the array
-  function shuffle(array) {
-    let currentIndex = array.length;
-    let temporaryValue;
-    let randomIndex;
 
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
+  function shuffle(array: any[]): any[] {
+  let currentIndex = array.length;
+  let temporaryValue;
+  let randomIndex;
 
-    return array;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
+
+  return array;
+}
 </script>
 
 <svelte:head>
@@ -187,7 +187,7 @@
     cursor: pointer;
     width: 50px;
     height: 50px;
-    background-color: #4F1414;
+    background-color: #596F35;
     color: #FFF;
     font-size: 20px;
     border-radius: 50%;
@@ -195,7 +195,8 @@
   }
 
   .arrow:hover {
-    background-color: #560101;
+    background-color: #868f78;
+    color:black;
   }
 
   .next {
