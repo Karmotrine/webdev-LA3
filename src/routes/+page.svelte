@@ -79,18 +79,21 @@
 
   return array;
 }
+
+
 </script>
 
 <svelte:head>
   <title>Home</title>
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
+
 <div class="bg">
   <section>
     <h2>Popular Songs</h2>
     <div class="grid-container">
 
-      {#each limitedMusicData as music}
+      {#each limitedMusicData as music (music.url)}
         <div class="grid-item">
           <MusicCard music={music}/>
         </div>
@@ -114,7 +117,7 @@
     <h2>Latest Songs</h2>
     <div class="grid-container">
 
-      {#each limitedLMusicData as music}
+      {#each limitedLMusicData as music (music.url)}
         <div class="grid-item">
           <MusicCard music={music}/>
         </div>
@@ -155,7 +158,8 @@
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    grid-template-columns: repeat(7, minmax(210px, 1fr));
+    overflow-x: hidden;
     gap: 20px;
     transition: background-color 0.3s ease-in-out;
   }
@@ -206,5 +210,15 @@
   .previous {
     left: -15px;
   }
+  @media only screen and (max-width: 720px) {
+  .grid-container {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); */
+    grid-template-columns: repeat(7, minmax(150px, 1fr));
+    overflow-x: hidden;
+    gap: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+}
 </style>
 

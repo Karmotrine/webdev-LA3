@@ -1,6 +1,4 @@
-import type { SearchModel } from "./search/model"
-
-export const MusicData: SearchModel[] = [
+export const MusicData = [
   {
     author: "Aespa",
     thumbnail: "https://pbs.twimg.com/media/FukAoplakAMT_Xo?format=jpg&name=360x360",
