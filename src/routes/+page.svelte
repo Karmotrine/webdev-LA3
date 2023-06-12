@@ -1,14 +1,207 @@
 <script lang="ts">
-  import Counter from "./Counter.svelte";
-  import welcome from "$lib/images/svelte-welcome.webp";
-  import welcome_fallback from "$lib/images/svelte-welcome.png";
+  import { MusicData } from "../data-server";
+  import { LMusicData } from "../latest";
+  import MusicCard from "./MusicCard.svelte"
+
+  let currentIndexPopular = 0;
+  let currentIndexLatest = 0;
+
+  const shuffledMusicData = shuffle([...MusicData]);
+  const shuffledLMusicData = shuffle([...LMusicData]);
+  let limitedMusicData = shuffledMusicData.slice(0, 7);
+  let limitedLMusicData = shuffledLMusicData.slice(0, 7);
+
+  function showNextPopularSong() {
+    currentIndexPopular = (currentIndexPopular + 1) % shuffledMusicData.length;
+    const nextSong = shuffledMusicData[currentIndexPopular];
+    if (!limitedMusicData.includes(nextSong)) {
+      limitedMusicData = [
+        ...limitedMusicData.slice(1),
+        nextSong
+      ];
+    } else {
+      showNextPopularSong(); // Call the function recursively to find a non-repeated song
+    }
+  }
+
+  function showPreviousPopularSong() {
+    currentIndexPopular = (currentIndexPopular - 1 + shuffledMusicData.length) % shuffledMusicData.length;
+    const previousSong = shuffledMusicData[currentIndexPopular];
+    if (!limitedMusicData.includes(previousSong)) {
+      limitedMusicData = [
+        previousSong,
+        ...limitedMusicData.slice(0, limitedMusicData.length - 1)
+      ];
+    } else {
+      showPreviousPopularSong(); // Call the function recursively to find a non-repeated song
+    }
+  }
+
+  function showNextLatestSong() {
+    currentIndexLatest = (currentIndexLatest + 1) % shuffledLMusicData.length;
+    const nextSong = shuffledLMusicData[currentIndexLatest];
+    if (!limitedLMusicData.includes(nextSong)) {
+      limitedLMusicData = [
+        ...limitedLMusicData.slice(1),
+        nextSong
+      ];
+    } else {
+      showNextLatestSong(); // Call the function recursively to find a non-repeated song
+    }
+  }
+
+  function showPreviousLatestSong() {
+    currentIndexLatest = (currentIndexLatest - 1 + shuffledLMusicData.length) % shuffledLMusicData.length;
+    const previousSong = shuffledLMusicData[currentIndexLatest];
+    if (!limitedLMusicData.includes(previousSong)) {
+      limitedLMusicData = [
+        previousSong,
+        ...limitedLMusicData.slice(0, limitedLMusicData.length - 1)
+      ];
+    } else {
+      showPreviousLatestSong(); // Call the function recursively to find a non-repeated song
+    }
+  }
+
+  // Function to shuffle the array
+  function shuffle(array) {
+    let currentIndex = array.length;
+    let temporaryValue;
+    let randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
 </script>
 
 <svelte:head>
   <title>Home</title>
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
+<div class="bg">
+  <section>
+    <h2>Popular Songs</h2>
+    <div class="grid-container">
 
-<section>
-  <p>Hello World</p>
-</section>
+      {#each limitedMusicData as music}
+        <div class="grid-item">
+          <MusicCard music={music}/>
+        </div>
+      {/each}
+    </div>
+    {#if limitedMusicData.length < shuffledMusicData.length}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <div class="arrow next" on:click={showNextPopularSong}>
+        &rarr;
+      </div>
+    {/if}
+    {#if currentIndexPopular > 0}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <div class="arrow previous" on:click={showPreviousPopularSong}>
+        &larr;
+      </div>
+    {/if}
+  </section>
+
+  <section>
+    <h2>Latest Songs</h2>
+    <div class="grid-container">
+
+      {#each limitedLMusicData as music}
+        <div class="grid-item">
+          <MusicCard music={music}/>
+        </div>
+      {/each}
+    </div>
+    {#if limitedLMusicData.length < shuffledLMusicData.length}
+      <div class="arrow next" on:click={showNextLatestSong}>
+        &rarr;
+      </div>
+    {/if}
+    {#if currentIndexLatest > 0}
+      <div class="arrow previous" on:click={showPreviousLatestSong}>
+        &larr;
+      </div>
+    {/if}
+  </section>
+</div>
+
+<style>
+  .bg {
+    background-color: #FFF2F2;
+    padding: 20px;
+  }
+
+  section {
+    margin-top: 35px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 210px));
+    gap: 20px;
+    transition: background-color 0.3s ease-in-out;
+
+  }
+
+  .grid-item:hover {
+    background-color: #363131;
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: left;
+    background-color: #0B0101;
+    height: 300px;
+    cursor: pointer;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #4F1414;
+    color: #FFF;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .arrow:hover {
+    background-color: #560101;
+  }
+
+  .next {
+    right: -25px;
+    margin-right: 20px; /* Adjust for the gap */
+  }
+
+  .previous {
+    left: -25px;
+    margin-left: 20px; /* Adjust for the gap */
+  }
+</style>
