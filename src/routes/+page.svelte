@@ -97,13 +97,11 @@
       {/each}
     </div>
     {#if limitedMusicData.length < shuffledMusicData.length}
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <div class="arrow next" on:click={showNextPopularSong}>
         &rarr;
       </div>
     {/if}
     {#if currentIndexPopular > 0}
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <div class="arrow previous" on:click={showPreviousPopularSong}>
         &larr;
       </div>
@@ -152,10 +150,9 @@
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 210px));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 20px;
     transition: background-color 0.3s ease-in-out;
-
   }
 
   .grid-item:hover {
@@ -172,6 +169,7 @@
     background-color: #0B0101;
     height: 300px;
     cursor: pointer;
+    border-radius: 10px;
   }
 
   .arrow {
@@ -197,11 +195,10 @@
 
   .next {
     right: -25px;
-    margin-right: 20px; /* Adjust for the gap */
   }
 
   .previous {
     left: -25px;
-    margin-left: 20px; /* Adjust for the gap */
   }
 </style>
+
