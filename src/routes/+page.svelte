@@ -97,11 +97,13 @@
       {/each}
     </div>
     {#if limitedMusicData.length < shuffledMusicData.length}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <div class="arrow next" on:click={showNextPopularSong}>
         &rarr;
       </div>
     {/if}
     {#if currentIndexPopular > 0}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <div class="arrow previous" on:click={showPreviousPopularSong}>
         &larr;
       </div>
@@ -119,11 +121,13 @@
       {/each}
     </div>
     {#if limitedLMusicData.length < shuffledLMusicData.length}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <div class="arrow next" on:click={showNextLatestSong}>
         &rarr;
       </div>
     {/if}
     {#if currentIndexLatest > 0}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <div class="arrow previous" on:click={showPreviousLatestSong}>
         &larr;
       </div>
@@ -135,6 +139,7 @@
   .bg {
     background-color: #FFF2F2;
     padding: 20px;
+    overflow: hidden;
   }
 
   section {
