@@ -15,6 +15,7 @@
   width: 200px; 
   height: 180px; 
   object-fit: cover; 
+  border-radius: 5px;
 }
 .title{
   font-size: 23px;
