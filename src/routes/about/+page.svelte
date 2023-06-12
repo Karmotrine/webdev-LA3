@@ -112,28 +112,18 @@
 		text-align: center;
 	}
 
-	ul {
-		list-style: none;
-		padding: 0;
-		margin-bottom: 1rem;
-	}
-
-	li {
-		margin-bottom: 0.5rem;
-	}
-
 	.team-grid {
 	display: flex;
 	justify-content: center;
 	gap: 1rem;
-}
+	}
 
 	.team-member {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-}
+	}
 
 	.team-member img {
 	width: 200px;
@@ -142,6 +132,6 @@
 	object-position: center;
 	border-radius: 5px;
 	margin-bottom: 0.5rem;
-}
+	}
 
 </style>
