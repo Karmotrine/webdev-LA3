@@ -1,26 +1,137 @@
+<script lang="ts">
+	export let pageTitle = "About";
+</script>
+
 <svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
+	<title>{pageTitle}</title>
+	<meta name="description" content="About Youtify - Inspired by Spotify and YouTube" />
 </svelte:head>
 
-<div class="text-column">
-	<h1>About this app</h1>
+<main>
+	<div class="about">
 
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
+		<div class="text-column">
+			<h1>ABOUT YOUTIFY</h1>
 
-	<pre>npm create svelte@latest</pre>
+			<p>
+				Youtify is a unique music streaming platform that seamlessly combines the best features of Spotify and YouTube.
+				Our goal is to provide a comprehensive and immersive music experience for our users by leveraging the vast music library of YouTube
+				along with the convenience and personalized features of Spotify.
+			</p>
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
+			<p>
+				With Youtify, you can explore an extensive collection of music spanning various genres, artists, and playlists.
+				Discover new songs, create your own playlists, and enjoy a curated selection of hand-picked tracks. Whether you're in the mood for
+				chart-topping hits, timeless classics, or underground gems, Youtify has you covered.
+			</p>
 
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>
+			<p>
+				In addition to the extensive music catalog, Youtify offers powerful recommendation algorithms that tailor your listening experience
+				based on your preferences. Discover new artists, receive personalized recommendations, and stay up-to-date with the latest music trends.
+			</p>
+
+			<p>
+				Youtify also allows you to enjoy music videos alongside the audio tracks, bringing your music to life. Watch official music videos,
+				live performances, and exclusive content from your favorite artists, all within the Youtify platform.
+			</p>
+		</div>
+
+		<div class="team-column">
+			<h2>OUR TEAM</h2>
+
+			<div class="team-grid">
+				<div class="team-member">
+					<img src="Denise.jpg" alt="denise" />
+					<p>Denise Cruz</p>
+				</div>
+				<div class="team-member">
+					<img src="Eunice.jpg" alt="eunice" />
+					<p>Eunice Villanueva</p>
+				</div>
+				<div class="team-member">
+					<img src="Kenshin.jpg" alt="kensh" />
+					<p>Kenshin Nablo</p>
+				</div>
+				<div class="team-member">
+					<img src="Yuan.jpg" alt="yuan" />
+					<p>Yuan Ureña</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+<style>
+	main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background: #FFF2F2;
+	}
+
+	.about {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 2rem;
+		position: relative;
+	}
+	
+	.text-column,
+	.team-column {
+		flex: 1;
+		max-width: 890px;
+	}
+
+	h1 {
+		font-style: normal;
+		font-weight: 800;
+		font-size: 36px;
+		line-height: 44px;
+		color: #596F35;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	h2 {
+		margin-top: 50px;
+		font-style: normal;
+		font-weight: 800;
+		font-size: 36px;
+		line-height: 44px;
+		color: #596F35;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	p {
+		margin-bottom: 1rem;
+		line-height: 1.5;
+		text-align: center;
+	}
+
+	.team-grid {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	}
+
+	.team-member {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	}
+
+	.team-member img {
+	width: 200px;
+	height: 250px;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 5px;
+	margin-bottom: 0.5rem;
+	}
+
+</style>
