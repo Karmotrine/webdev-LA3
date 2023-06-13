@@ -1,4 +1,5 @@
 <script lang="ts">
+  export const csr = true;
   import { MusicData } from "../data-server";
   import { LMusicData } from "../latest";
   import MusicCard from "./MusicCard.svelte"

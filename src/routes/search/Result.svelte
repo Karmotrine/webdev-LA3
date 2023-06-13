@@ -2,6 +2,9 @@
 	import type { SearchModel } from "./model";
     import { urlLoad } from "../stores";
     import { goto } from "$app/navigation";
+	import { Modal, } from 'flowbite-svelte'
+  	import Youtube from "svelte-youtube-embed";
+
 	export let search: SearchModel;
 
     const payLoad = () => {
@@ -13,11 +16,13 @@
 		)
         goto('/')
     }
+
+	let defaultModalSearch = false;
 </script>
 
-<button class="container" on:click={payLoad}>
+<button class="container" on:click={() => defaultModalSearch = true} >
 	<div class="thumbnail">
-		<img src={search.thumbnail} alt="thumbnail" />
+		<img src={`https://img.youtube.com/vi/${search.url}/default.jpg`} alt="thumbnail" />
 	</div>
 	<div class="content">
 		<div class="music">
@@ -41,6 +46,13 @@
 		</div>
 	</div>
 </button>
+
+<Modal bind:open={defaultModalSearch} autoclose outsideclose={true}>
+	<br/>
+	<Youtube id={`${search.url}`} />
+</Modal>
+  
+
 <style>
 	.container {
 		max-width: 100%;

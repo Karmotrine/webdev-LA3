@@ -1,15 +1,24 @@
 <script lang="ts">
   import type { MusicModel } from "../types";
+  import { Modal, } from 'flowbite-svelte'
+  import Youtube from "svelte-youtube-embed";
 
   export let music: MusicModel;
+  let defaultModal = false;
 </script>
 
 
-<div>
+<button on:click={() => defaultModal = true}>
   <img src={music.thumbnail} alt={music.title} class="thumbnail" />
   <div class="title">{music.title}</div>
   <div class="author">{music.author}</div>
-</div>
+</button>
+
+<Modal bind:open={defaultModal} autoclose outsideclose={true}>
+  <br/>
+  <Youtube id={`${music.url}`} />
+</Modal>
+
 <style>
 .thumbnail {
   width: 200px; 
