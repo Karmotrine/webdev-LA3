@@ -1,4 +1,4 @@
-import type { SearchModel } from "./search/model"
+import type { SearchModel } from "./routes/search/model"
 
 export const MusicData: SearchModel[] = [
   {

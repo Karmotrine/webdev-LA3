@@ -1,13 +1,13 @@
 <script lang="ts">
     import {Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input} from 'flowbite-svelte'
-    import Search from './Search.svelte'
+    import Search from '../Search.svelte'
 </script>
 
 
 <Navbar let:hidden let:toggle class="!bg-[#9DC08B]">
     <NavBrand href="/">
         <img
-            src="/younify.png"
+            src="/images/younify.png"
             class="mr-3 h-6 sm:h-9"
             alt="Younify Logo"
         />
