@@ -41,7 +41,6 @@
 		</div>
 	</div>
 </button>
-
 <style>
 	.container {
 		max-width: 100%;

@@ -1,8 +1,8 @@
 export type SearchModel = {
     author: string;
-    date: string | Date;
+    date?: string | Date;
     thumbnail: string;
-    profile: string;
+    profile?: string;
     title: string;
     url: string;
 }

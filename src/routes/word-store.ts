@@ -12980,15 +12980,15 @@ export const allowed = new Set([
 	'zymes',
 	'zymic'
 ]);
-export const MockData: Array<SearchModel> = []
-words.forEach((word, index) => {
-	let search: SearchModel = {
-		author: "author",
-		date: "June 20, 2023",
-		thumbnail:`src/lib/images/svelte-welcome.png`,
-		profile: "src/lib/images/svelte-welcome.png",
-		title: word,
-	}
-	MockData.push(search)
-}
-)
+// export const MockData: Array<SearchModel> = []
+// words.forEach((word, index) => {
+// 	let search: SearchModel = {
+// 		author: "author",
+// 		date: "June 20, 2023",
+// 		thumbnail:`src/lib/images/svelte-welcome.png`,
+// 		profile: "src/lib/images/svelte-welcome.png",
+// 		title: word,
+// 	}
+// 	MockData.push(search)
+// }
+// )

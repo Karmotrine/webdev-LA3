@@ -1,5 +1,3 @@
-/** @type {import('tailwindcss').Config}*/
-/** @type {import('tailwindcss').Config}*/
 const config = {
   content: [
     "./src/**/*.{html,js,svelte,ts}",
@@ -10,8 +8,10 @@ const config = {
     extend: {},
   },
 
-  plugins: [require("flowbite/plugin")],
-  darkMode: "class",
+  plugins: [
+    require('flowbite/plugin')
+  ],
+  darkMode: 'class',
 };
 
 module.exports = config;

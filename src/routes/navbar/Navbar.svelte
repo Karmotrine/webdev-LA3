@@ -1,27 +1,6 @@
 <script lang="ts">
     import {Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input} from 'flowbite-svelte'
-    import Search from './Search.svelte'
-    import { searchTerm} from '../stores';
-    import { page } from '$app/stores';
-    import { goto } from '$app/navigation';
-
-    let val = "";
-    
-    let timer : ReturnType<typeof setTimeout>;
-    const debounce = (value: HTMLInputElement) => {
-		clearTimeout(timer);
-		timer = setTimeout(() => {
-			$searchTerm = value.value;
-        }, 250);
-	}
-
-    const enterPress = (event:KeyboardEvent) => {
-        if(event.key === "Enter"){
-            $searchTerm = (event.currentTarget as HTMLInputElement).value
-            goto('/search')
-        }
-    }
-
+    import Search from '../Search.svelte'
 </script>
 
 

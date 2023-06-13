@@ -25,10 +25,12 @@
 <style>
 #result{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
+    padding: 0 2vw;
     flex-direction: column;
     width: 100%;
+    min-height: 100vh;
 }
 #tag{
     display: block;

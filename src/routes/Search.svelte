@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { searchTerm} from '../stores';
+    import { searchTerm} from './stores';
     import { page } from '$app/stores';
     import { goto } from '$app/navigation';
 
@@ -22,7 +22,7 @@
 </script>
 
 <div>
-    <label for="search-navbar">Search:</label>
+    <!-- <label for="search-navbar">Search:</label> -->
     {#if $page.url.pathname === '/'}
         <input bind:value={val} on:keypress={enterPress} type="text" id="search-navbar" class="pl-3 !rounded-full !bg-[#E5EEDF]" placeholder="Search..." />
     {:else}

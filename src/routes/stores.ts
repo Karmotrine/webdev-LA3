@@ -1,5 +1,5 @@
 import { writable, derived } from "svelte/store";
-import { MockData } from "./word-store";
+// import { MockData } from "./word-store";
 import { MusicData } from "./data-server";
 import type { SearchModel, SearchPayLoad } from "./search/model";
 import type { Writable } from "svelte/store";
