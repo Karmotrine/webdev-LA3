@@ -22,25 +22,25 @@
 
 <button class="container" on:click={() => defaultModalSearch = true} >
 	<div class="thumbnail">
-		<img src={`https://img.youtube.com/vi/${search.url}/default.jpg`} alt="thumbnail" />
+		<img src={`https://img.youtube.com/vi/${search.url}/hqdefault.jpg`} alt="thumbnail" />
 	</div>
 	<div class="content">
 		<div class="music">
 			<span class="title">{search.title}</span>
 			<div class="name-date">
 				<span class="name">{search.author}</span>
-				{#if search.date instanceof Date}
+<!-- 				{#if search.date instanceof Date}
 					<span class="date">{search.date.getDate()}</span>
 				{:else}
 					<span class="date">{search.date}</span>
-				{/if}
+				{/if} -->
 			</div>
 		</div>
 		<div class="details">
 			<div class="artist">
-				<div class="profile">
+<!-- 				<div class="profile">
 					<img src={search.profile} alt="artist" />
-				</div>
+				</div> -->
 				<span class="name">{search.author}</span>
 			</div>
 		</div>

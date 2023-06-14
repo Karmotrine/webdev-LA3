@@ -47,7 +47,7 @@ export const LMusicData: SearchModel[] = [
     author: "BTS ft. Megan Thee Stallion",
     thumbnail: "https://upload.wikimedia.org/wikipedia/en/d/db/BTS_-_Butter.png",
     title: "Butter",
-    url: "https://upload.wikimedia.org/wikipedia/en/d/db/BTS_-_Butter.png"
+    url: "WMweEpGlu_U"
   },
 
   {
@@ -152,7 +152,7 @@ export const LMusicData: SearchModel[] = [
     author: "Drake ft. Rihanna",
     thumbnail: "https://media.pitchfork.com/photos/5929f7b15e6ef95969326000/1:1/w_320,c_limit/5f3c8267.jpg",
     title: "Too Good",
-    url: "2Mstg6w8A9Q"
+    url: "1lbKUiZv1fI"
   },
 
   {

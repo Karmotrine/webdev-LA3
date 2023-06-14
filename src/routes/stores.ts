@@ -1,11 +1,11 @@
 import { writable, derived } from "svelte/store";
 // import { MockData } from "./word-store";
-import { MusicData } from "./data-server";
+import { LMusicData } from "../latest";
 import type { SearchModel, SearchPayLoad } from "./search/model";
 import type { Writable } from "svelte/store";
 
 export const searchTerm = writable("")
-export const searchData: Writable<SearchModel[]> = writable(MusicData) 
+export const searchData: Writable<SearchModel[]> = writable(LMusicData) 
 export const searched = derived(
 	[searchTerm, searchData],
 	([$searchTerm, $searchData]) => {
