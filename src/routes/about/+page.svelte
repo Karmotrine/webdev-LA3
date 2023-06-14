@@ -9,7 +9,6 @@
 
 <main>
 	<div class="about">
-
 		<div class="text-column">
 			<h1>ABOUT YOUTIFY</h1>
 
@@ -64,74 +63,103 @@
 
 <style>
 	main {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		background: #FFF2F2;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  min-height: 100vh;
+	  background: #FFF2F2;
+	  padding: 2rem;
 	}
-
+  
 	.about {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 2rem;
-		position: relative;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  margin: 0;
+	  position: relative;
+	  width: 100%;
+	  max-width: 960px;
 	}
-	
+  
 	.text-column,
 	.team-column {
-		flex: 1;
-		max-width: 890px;
+	  flex: 1;
+	  max-width: 890px;
 	}
-
-	h1 {
-		font-style: normal;
-		font-weight: 800;
-		font-size: 36px;
-		line-height: 44px;
-		color: #596F35;
-		text-align: center;
-		margin-bottom: 1rem;
-	}
-
-	h2 {
-		margin-top: 50px;
-		font-style: normal;
-		font-weight: 800;
-		font-size: 36px;
-		line-height: 44px;
-		color: #596F35;
-		text-align: center;
-		margin-bottom: 1rem;
-	}
-
+  
+	h1,
+	h2,
 	p {
-		margin-bottom: 1rem;
-		line-height: 1.5;
-		text-align: center;
+	  text-align: center;
 	}
-
+  
+	h1 {
+	  font-style: normal;
+	  font-weight: 800;
+	  font-size: 2.5rem;
+	  line-height: 3rem;
+	  color: #596F35;
+	  margin-bottom: 1rem;
+	}
+  
+	h2 {
+	  margin-top: 2.5rem;
+	  font-style: normal;
+	  font-weight: 800;
+	  font-size: 2rem;
+	  line-height: 2.5rem;
+	  color: #596F35;
+	  margin-bottom: 1rem;
+	}
+  
+	p {
+	  margin-bottom: 1rem;
+	  line-height: 1.5;
+	}
+  
 	.team-grid {
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
+	  display: flex;
+	  justify-content: center;
+	  gap: 1rem;
 	}
-
+  
 	.team-member {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
 	}
-
+  
 	.team-member img {
-	width: 200px;
-	height: 250px;
-	object-fit: cover;
-	object-position: center;
-	border-radius: 5px;
-	margin-bottom: 0.5rem;
+	  width: 200px;
+	  height: 250px;
+	  object-fit: cover;
+	  object-position: center;
+	  border-radius: 5px;
+	  margin-bottom: 0.5rem;
 	}
-
-</style>
+  
+	/* Responsive styles */
+	@media screen and (max-width: 600px) {
+	  h1 {
+		font-size: 1.8rem;
+		line-height: 2.2rem;
+	  }
+  
+	  h2 {
+		font-size: 1.6rem;
+		line-height: 2rem;
+		margin-top: 2rem;
+	  }
+  
+	  p {
+		font-size: 0.9rem;
+		line-height: 1.5rem;
+	  }
+  
+	  .team-member img {
+		width: 150px;
+		height: 180px;
+	  }
+	}
+  </style>
