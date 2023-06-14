@@ -4,34 +4,34 @@
 
 <svelte:head>
 	<title>{pageTitle}</title>
-	<meta name="description" content="About Youtify - Inspired by Spotify and YouTube" />
+	<meta name="description" content="About Younify - Inspired by Spotify and YouTube" />
 </svelte:head>
 
 <main>
 	<div class="about">
 		<div class="text-column">
-			<h1>ABOUT YOUTIFY</h1>
+			<h1>ABOUT YOUNIFY</h1>
 
 			<p>
-				Youtify is a unique music streaming platform that seamlessly combines the best features of Spotify and YouTube.
+				Younify is a unique music streaming platform that seamlessly combines the best features of Spotify and YouTube.
 				Our goal is to provide a comprehensive and immersive music experience for our users by leveraging the vast music library of YouTube
 				along with the convenience and personalized features of Spotify.
 			</p>
 
 			<p>
-				With Youtify, you can explore an extensive collection of music spanning various genres, artists, and playlists.
+				With Younify, you can explore an extensive collection of music spanning various genres, artists, and playlists.
 				Discover new songs, create your own playlists, and enjoy a curated selection of hand-picked tracks. Whether you're in the mood for
-				chart-topping hits, timeless classics, or underground gems, Youtify has you covered.
+				chart-topping hits, timeless classics, or underground gems, Younify has you covered.
 			</p>
 
 			<p>
-				In addition to the extensive music catalog, Youtify offers powerful recommendation algorithms that tailor your listening experience
+				In addition to the extensive music catalog, Younify offers powerful recommendation algorithms that tailor your listening experience
 				based on your preferences. Discover new artists, receive personalized recommendations, and stay up-to-date with the latest music trends.
 			</p>
 
 			<p>
-				Youtify also allows you to enjoy music videos alongside the audio tracks, bringing your music to life. Watch official music videos,
-				live performances, and exclusive content from your favorite artists, all within the Youtify platform.
+				Younify also allows you to enjoy music videos alongside the audio tracks, bringing your music to life. Watch official music videos,
+				live performances, and exclusive content from your favorite artists, all within the Younify platform.
 			</p>
 		</div>
 

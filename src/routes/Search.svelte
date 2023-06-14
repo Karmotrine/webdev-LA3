@@ -24,7 +24,7 @@
 <div>
     <!-- <label for="search-navbar">Search:</label> -->
     {#if $page.url.pathname === '/'}
-        <input bind:value={val} on:keypress={enterPress} type="text" id="search-navbar" class="pl-3 !rounded-full !bg-[#E5EEDF]" placeholder="Search..." />
+        <input bind:value={val} on:keypress={enterPress} type="text" id="search-navbar" class="pl-3 !rounded-full !bg-[#E5EEDF] !max-w-[400px]" placeholder="Search..." />
     {:else}
 	    <input bind:value={val} 
                 on:keyup={({currentTarget : target}) => debounce(target)} type="text" id="search-navbar" class="pl-3 !rounded-full !bg-[#E5EEDF]" placeholder="Search..." />

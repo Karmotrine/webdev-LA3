@@ -8,7 +8,7 @@
     <NavBrand href="/">
         <img
             src="/younify.png"
-            class="mr-3 h-6 sm:h-9"
+            class="mr-3 h-6 sm:h-9 hidden lg:block"
             alt="Younify Logo"
         />
     </NavBrand>
